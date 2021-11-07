@@ -28,3 +28,5 @@ const data = [
         earning:326
     },
 ]
+
+export default data;

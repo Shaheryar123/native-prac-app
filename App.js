@@ -3,7 +3,7 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { VictoryChart, VictoryBar, VictoryTheme, VictoryPie } from 'victory-native'
 import data from './Data'
-
+import Charts from './Charts';
 
 export default function App() {
   const Data = [
@@ -38,23 +38,7 @@ export default function App() {
     
   ]
   return (
-    <ScrollView >
-      <View style = {styles.container}>
-      <VictoryPie  animate theme={ VictoryTheme.material} data={ Data} x= "month" y = "earning" />
-      <Text> Bar Chart</Text>
-      
-      <VictoryChart theme={VictoryTheme.material}>
-        <VictoryBar style={{
-                    data: {width: 10, fill: (data) => data.x === 1 ? "#d9d9d9" : "#2ba8de"
-                  },
-                    labels: {  fontSize: 10, fontFamily: "Whitney"}
-          }}
-            labels={({ datum }) => `${datum._y}`} animate data={Data} x="month" y="earning" />
-      </VictoryChart>
-      
-      </View>      
-      
-    </ScrollView>
+   <Charts/>
   );
 }
 
